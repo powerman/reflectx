@@ -6,9 +6,8 @@ import (
 	"github.com/powerman/check"
 )
 
-func TestPkgPath(tt *testing.T) {
-	tt.Parallel()
-	t := check.T(tt).MustAll()
+func TestPkgPath(t *testing.T) {
+	t.Parallel()
 
 	tests := []struct {
 		given     string
@@ -41,7 +40,7 @@ func TestPkgPath(tt *testing.T) {
 	for _, tc := range tests {
 		t.Run(tc.given, func(tt *testing.T) {
 			tt.Parallel()
-			t := check.T(tt).MustAll()
+			t := check.Must(tt)
 			if tc.wantPanic {
 				t.Panic(func() { pkgPath(tc.given) })
 			} else {
@@ -51,9 +50,8 @@ func TestPkgPath(tt *testing.T) {
 	}
 }
 
-func TestPkgName(tt *testing.T) {
-	tt.Parallel()
-	t := check.T(tt).MustAll()
+func TestPkgName(t *testing.T) {
+	t.Parallel()
 
 	tests := []struct {
 		given     string
@@ -86,7 +84,7 @@ func TestPkgName(tt *testing.T) {
 	for _, tc := range tests {
 		t.Run(tc.given, func(tt *testing.T) {
 			tt.Parallel()
-			t := check.T(tt).MustAll()
+			t := check.Must(tt)
 			if tc.wantPanic {
 				t.Panic(func() { pkgName(tc.given) })
 			} else {
@@ -96,9 +94,8 @@ func TestPkgName(tt *testing.T) {
 	}
 }
 
-func TestTypeMethodName(tt *testing.T) {
-	tt.Parallel()
-	t := check.T(tt).MustAll()
+func TestTypeMethodName(t *testing.T) {
+	t.Parallel()
 
 	tests := []struct {
 		given     string
@@ -131,7 +128,7 @@ func TestTypeMethodName(tt *testing.T) {
 	for _, tc := range tests {
 		t.Run(tc.given, func(tt *testing.T) {
 			tt.Parallel()
-			t := check.T(tt).MustAll()
+			t := check.Must(tt)
 			if tc.wantPanic {
 				t.Panic(func() { typeMethodName(tc.given) })
 			} else {
@@ -141,9 +138,8 @@ func TestTypeMethodName(tt *testing.T) {
 	}
 }
 
-func TestMethodName(tt *testing.T) {
-	tt.Parallel()
-	t := check.T(tt).MustAll()
+func TestMethodName(t *testing.T) {
+	t.Parallel()
 
 	tests := []struct {
 		given     string
@@ -176,7 +172,7 @@ func TestMethodName(tt *testing.T) {
 	for _, tc := range tests {
 		t.Run(tc.given, func(tt *testing.T) {
 			tt.Parallel()
-			t := check.T(tt).MustAll()
+			t := check.Must(tt)
 			if tc.wantPanic {
 				t.Panic(func() { methodName(tc.given) })
 			} else {
@@ -186,9 +182,8 @@ func TestMethodName(tt *testing.T) {
 	}
 }
 
-func TestFuncName(tt *testing.T) {
-	tt.Parallel()
-	t := check.T(tt).MustAll()
+func TestFuncName(t *testing.T) {
+	t.Parallel()
 
 	tests := []struct {
 		given     string
@@ -221,7 +216,7 @@ func TestFuncName(tt *testing.T) {
 	for _, tc := range tests {
 		t.Run(tc.given, func(tt *testing.T) {
 			tt.Parallel()
-			t := check.T(tt).MustAll()
+			t := check.Must(tt)
 			if tc.wantPanic {
 				t.Panic(func() { funcName(tc.given) })
 			} else {
@@ -231,9 +226,8 @@ func TestFuncName(tt *testing.T) {
 	}
 }
 
-func TestStripTypeRef(tt *testing.T) {
-	tt.Parallel()
-	t := check.T(tt).MustAll()
+func TestStripTypeRef(t *testing.T) {
+	t.Parallel()
 
 	tests := []struct {
 		given string
@@ -249,7 +243,7 @@ func TestStripTypeRef(tt *testing.T) {
 	for _, tc := range tests {
 		t.Run(tc.given, func(tt *testing.T) {
 			tt.Parallel()
-			t := check.T(tt).MustAll()
+			t := check.Must(tt)
 			t.Equal(stripTypeRef(tc.given), tc.want)
 		})
 	}

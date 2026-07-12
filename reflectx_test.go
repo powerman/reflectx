@@ -32,7 +32,7 @@ func topFuncName() string { return reflectx.CallerFuncName(0) }
 
 func TestMethodsOf(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	type testInterface interface {
 		A()
@@ -46,7 +46,7 @@ func TestMethodsOf(tt *testing.T) {
 
 func TestMethodsOfPanics(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	t.Panic(func() { reflectx.MethodsOf(nil) })
 	t.Panic(func() { reflectx.MethodsOf("not a pointer to interface") })
@@ -55,7 +55,7 @@ func TestMethodsOfPanics(tt *testing.T) {
 
 func TestCallerPkg(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	t.Equal(valRecv{}.pkg(), "reflectx_test")
 	t.Equal((&ptrRecv{}).pkg(), "reflectx_test")
@@ -63,14 +63,14 @@ func TestCallerPkg(tt *testing.T) {
 
 func TestCallerPkgPath(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	t.HasSuffix(pkgPathTest{}.callerPkgPath(), "/reflectx_test")
 }
 
 func TestCallerMethodName(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	t.Equal(valRecv{}.method(), "method")
 	t.Equal((&ptrRecv{}).method(), "method")
@@ -82,14 +82,14 @@ func TestCallerMethodName(tt *testing.T) {
 
 func TestCallerMethodNamePanics(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	t.Panic(func() { topMethod() })
 }
 
 func TestCallerFuncName(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	t.Equal(reflectx.CallerFuncName(0), "TestCallerFuncName")
 
@@ -99,7 +99,7 @@ func TestCallerFuncName(tt *testing.T) {
 
 func TestCallerTypeMethodName(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	t.Equal(valRecv{}.typeName(), "valRecv.typeName")
 	t.Equal((&ptrRecv{}).typeName(), "ptrRecv.typeName")
@@ -111,14 +111,14 @@ func TestCallerTypeMethodName(tt *testing.T) {
 
 func TestCallerTypeMethodNamePanics(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	t.Panic(func() { topTypeName() })
 }
 
 func TestCallerPkg_skip(tt *testing.T) {
 	tt.Parallel()
-	t := check.T(tt).MustAll()
+	t := check.Must(tt)
 
 	// skip=0 from test helper should return our test package.
 	t.Equal(reflectx.CallerPkg(0), "reflectx_test")
