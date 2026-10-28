@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-10-28
+
+### 🔔 Changed
+
+- Require Go 1.26 by @powerman in [6cf1049]
+
+### 📦️ Dependencies
+
+- **(deps)** Upgrade go and golangci-lint by @powerman in [c9aaaa3]
+- **(deps)** Upgrade go modules by @powerman in [7b68d25]
+- **(deps)** Upgrade go and golangci-lint by @powerman in [4d87636]
+- **(deps)** Mise up by @powerman in [8bddd94]
+
+[0.2.0]: https://github.com/powerman/reflectx/compare/v0.1.1..v0.2.0
+[c9aaaa3]: https://github.com/powerman/reflectx/commit/c9aaaa30f90c7c6611afd55b1cea37f8dab44125
+[7b68d25]: https://github.com/powerman/reflectx/commit/7b68d255ec8298d4c217a48efb1d4d7509847b3e
+[4d87636]: https://github.com/powerman/reflectx/commit/4d87636edad06b165075d3514b4c23e2af2ecbc5
+[6cf1049]: https://github.com/powerman/reflectx/commit/6cf1049f592f2f8220bde53a2747c3ce0f95b3ba
+[8bddd94]: https://github.com/powerman/reflectx/commit/8bddd94b7377cf9f1e7e6060b9832c19841d8dc6
+
 ## [0.1.1] - 2026-07-12
 
 [0.1.1]: https://github.com/powerman/reflectx/compare/%40%7B10year%7D..v0.1.1
